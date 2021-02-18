@@ -10,6 +10,7 @@ body {
   position: absolute;
   width: 200px;
   transition: transform 0.4s;
+  left: 0;
 }
 
 .right {
