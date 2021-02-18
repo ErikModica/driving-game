@@ -8,6 +8,7 @@ body {
 
 .car {
   width: 200px;
+  transition: transform 0.4s;
 }
 
 .right {
@@ -15,7 +16,7 @@ body {
 }
 
 .up {
-  transform: rotate(270deg);
+  transform: rotate(-90deg);
 }
 
 .left {
