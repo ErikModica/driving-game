@@ -7,8 +7,10 @@ body {
 }
 
 .car {
+  position: absolute;
   width: 200px;
   transition: transform 0.4s;
+  left: 0;
 }
 
 .right {
@@ -25,4 +27,8 @@ body {
 
 .down {
   transform: rotate(90deg);
+}
+
+.go {
+  transform: translateX(3px);
 }
