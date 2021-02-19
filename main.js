@@ -1,8 +1,6 @@
 var $car = document.querySelector('.car');
 var intervalID = null;
-
-addEventListener('keydown', changeDirection);
-addEventListener('keydown', ignitionOn);
+var carIsOn = false;
 
 function changeDirection(event) {
   switch (event.key) {
@@ -22,14 +20,20 @@ function changeDirection(event) {
 }
 
 var num = 0;
-function moveCar () {
+function moveCar() {
   num += 5;
   $car.style.left = num + 'px';
 }
 
-
-function ignitionOn(event) {
-  if (event.key === ' ') {
+function ignite(event) {
+  if (!carIsOn && event.key === ' ') {
     intervalID = setInterval(moveCar, 16);
+    carIsOn = true;
+  } else {
+    clearInterval(intervalID);
+    carIsOn = false;
   }
 }
+
+addEventListener('keydown', changeDirection);
+addEventListener('keydown', ignite);
