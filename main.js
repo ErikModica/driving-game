@@ -46,7 +46,7 @@ function ignite(event) {
   if (!carIsOn && event.key === ' ') {
     intervalID = setInterval(moveCar, 16);
     carIsOn = true;
-  } else {
+  } else if (carIsOn && event.key === ' ') {
     clearInterval(intervalID);
     carIsOn = false;
   }
