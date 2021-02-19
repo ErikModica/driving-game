@@ -19,10 +19,27 @@ function changeDirection(event) {
   }
 }
 
-var num = 0;
+var x = 0;
+var y = 0;
 function moveCar() {
-  num += 5;
-  $car.style.left = num + 'px';
+  switch ($car.className) {
+    case 'car right':
+      x += 5;
+      $car.style.left = x + 'px';
+      break;
+    case 'car down':
+      y += 5;
+      $car.style.top = y + 'px';
+      break;
+    case 'car left':
+      x -= 5;
+      $car.style.left = x + 'px';
+      break;
+    case 'car up':
+      y -= 5;
+      $car.style.top = y + 'px';
+      break;
+  }
 }
 
 function ignite(event) {
